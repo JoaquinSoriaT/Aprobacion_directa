@@ -1,5 +1,4 @@
 from funciones import *
-from heroes import lista_heroes
 
 
 def ejecutar_menu() -> None:
@@ -32,10 +31,8 @@ def ejecutar_menu() -> None:
                 print("La lista ya está importada")
                 print("-----------------------------")
             else:
+                lista_heroes = importar_heroes()
                 importado = True
-                print("-----------------------------")
-                print("Lista importada")
-                print("-----------------------------")
         elif opcion == 9:
             print("¡Hasta luego!")
             flag = False
@@ -72,6 +69,18 @@ def ejecutar_menu() -> None:
             print("-----------------------------")
             print("Error, lista no importada.")
             print("-----------------------------")
+
+
+def importar_heroes() -> list:
+    """
+    Descripción: Importa la lista de héroes del archivo heroes.py.
+    Retorno: Lista bidimensional de héroes.
+    """
+    from heroes import lista_heroes
+    print("-----------------------------")
+    print("Lista importada")
+    print("-----------------------------")
+    return lista_heroes
 
 
 def mostrar_lista_heroes(lista: list) -> None:
